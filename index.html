@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traffic light simulator</title>
+<style>
+
+    .traffic-light{
+        width: 80px;
+        height:200px;
+        border: 4px solid black;
+        display: flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    .pole{
+        width: 38px;
+        height:100px;
+        margin-left: 25px;
+        background-color: black;
+    }
+    header{
+        text-align :center;
+        size:30px;
+    color: white;
+    }
+    
+    
+body {
+  background-image: url('image.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+    .light{
+        width: 60px;
+        height:60px;
+        border-radius: 50%;
+        margin: 10px;
+    }
+    .red{
+        background-color: red;
+    }
+    .yellow{
+        background-color: yellow;
+    }
+    .green{
+        background-color: green;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>TRAFFIC-LIGHT RACE</h1>
+        
+        
+      </header>
+        
+    
+ <div class="traffic-light">
+  <div class="light red"></div>  
+  <div class="light yellow"></div>
+  <div class="light green"></div> 
+  </div>
+  <div class="pole"></div>
+  </div>
+  <script>
+    const redlight=document.querySelector('.red');
+    const yellowlight=document.querySelector('.yellow');
+    const greenlight=document.querySelector('.green');
+
+    function changeLights(){
+        setTimeout(()=>{
+            redlight.style.backgroundColor='red';
+            yellowlight.style.backgroundColor='transparent';
+            greenlight.style.backgroundColor='transparent';
+
+            setTimeout(()=>{
+            redlight.style.backgroundColor='transparent';
+            yellowlight.style.backgroundColor='yellow';
+            greenlight.style.backgroundColor='transparent';
+
+            setTimeout(()=>{
+            redlight.style.backgroundColor='transparent';
+            yellowlight.style.backgroundColor='transparent';
+            greenlight.style.backgroundColor='green';
+            
+           changelights();
+        },3000);
+        },3000);
+        },3000);
+    }
+    changeLights(); 
+  </script>  
+</body>
+</html>
